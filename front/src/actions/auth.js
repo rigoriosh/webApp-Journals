@@ -45,7 +45,7 @@ export const startRegisterWithEmailAndPassword = (email, password, name) => {
                 const {user} = userCrednctial;
                 await user.updateProfile({displayName: name})
                 dispath(login(user.uid, user.displayName))
-                console.log(user);
+                //console.log(user);
             })
             .catch(e => console.log(e))
     }

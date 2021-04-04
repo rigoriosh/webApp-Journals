@@ -8,7 +8,7 @@ export const loadNotes = async(uid) => {
     const notes = [];
     notesSnap.forEach(snapHijo => {
         /* 
-            console.log(
+            //console.log(
                 {
                     id: snapHijo.id,
                     ...snapHijo.data()
@@ -20,7 +20,7 @@ export const loadNotes = async(uid) => {
             ...snapHijo.data()
         });        
     })
-    console.log(notes);
+    //console.log(notes);
 
     return notes;
 }

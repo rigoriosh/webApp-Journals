@@ -18,7 +18,7 @@ export const NoteScreen = () => {
             activeId.current = noteActive.id;
         }
     }, [noteActive, resetFields])  
-    console.log(fields)
+    //console.log(fields)
     
     useEffect(() => {
         dispatch(updateNote(fields));//actualiza solo la nota activa, mas no el listado de notas

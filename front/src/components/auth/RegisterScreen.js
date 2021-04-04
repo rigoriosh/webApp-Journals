@@ -13,15 +13,15 @@ export const RegisterScreen = () => {
     const {name ,email ,password ,confirmPassword } = fields;
 
     const dispatch = useDispatch();
-    const state = useSelector(state => state.state)
-    console.log(state);
+    //const state = useSelector(state => state.state)
+    //console.log(state);
     const {msgError} = useSelector(state => state.uiReducer.msgError); // el hook useSelector se utiliza para leer los reducers q estan en el store
-    console.log(msgError);
+    //console.log(msgError);
     
     const handleRegister = (e) => {
         e.preventDefault();
         if (isFormValid()) {
-            console.log('form ok');
+            //console.log('form ok');
             dispatch(startRegisterWithEmailAndPassword(email, password, name));
         }
     }

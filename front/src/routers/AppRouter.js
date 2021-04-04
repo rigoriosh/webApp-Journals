@@ -21,7 +21,7 @@ export const AppRouter = () => {
     useEffect(() => {
         /* esta parter pregunta a firebase si hay un usuario logueado, si es asi, atualiza el store */
         firebase.auth().onAuthStateChanged((user) => {
-            console.log({user});
+            //console.log({user});
             if (user?.uid) {/* si exite el user.uid siginifica q si esta aunticado */
                 dispatch(login(user.uid, user.displayName));// actualiza el store
                 setIsUserLoggedIn(true); // si el usuario ya esta logueado lo envia directamente al home

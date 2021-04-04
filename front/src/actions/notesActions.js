@@ -8,15 +8,15 @@ import { types } from "../types/types";
 export const startNewNotes = () => {
     return async(dispath, getState) => { /* getState, sirve para leer el store */
         const {uid} = getState().authReducer;
-        console.log(uid);
+        //console.log(uid);
         const newNote = {
-            title:'Ingresa un titulo para esta nota',
-            body:'y la descripción de la nota, y opcional sube una imagen',
+            title:'',
+            body:'',
             date: new Date().getTime()
         }
 
          const docRef = await dbFirebase.collection(`${uid}/journal/notes`).add(newNote);         
-         console.log(docRef.id)
+         //console.log(docRef.id)
          dispath(activarNota(docRef.id, newNote));
          dispath(actualizarNotaSideBar(docRef.id, newNote));
     }
@@ -46,7 +46,7 @@ export const startLoadingNotes = (uid) => {
 }
 
 export const setNotesInStore = (notes) => {
-    console.log(notes)
+    //console.log(notes)
     return {
         type: types.notesLoad,
         payload: notes
@@ -114,15 +114,15 @@ export const startUpLoadig = (archivo) => {
         noteActive.url = urlImagen;
         dispath(startSaveNote(noteActive));
         Swal.close();
-        console.log(urlImagen)
+        //console.log(urlImagen)
     }
 }
 
 export const startDeleteNote = (idNote) => {
     return async(dispath, getState)=>{ // gracias a redux-thunk se cuenta con el dispatch y el getSate
         const {uid} = getState().authReducer;
-        console.log({uid})
-        console.log({idNote})
+        //console.log({uid})
+        //console.log({idNote})
         const url = `${uid}/journal/notes/${idNote}`
         await dbFirebase.doc(url).delete();
         dispath(deleteNote(idNote))

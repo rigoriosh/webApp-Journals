@@ -6,7 +6,7 @@ export const JournalEntries = () => {
     
     const {notes} = useSelector( state => state.notesReducer );
     
-    console.log(notes)
+    //console.log(notes)
     return (
         <div className="journal__entries">
             {

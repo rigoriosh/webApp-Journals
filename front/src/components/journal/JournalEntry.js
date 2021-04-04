@@ -7,7 +7,7 @@ export const JournalEntry = ({id, title, body, date, url}) => {
     const dispatch = useDispatch();    
     const clicked = () => {
         const nota = {id, title, body, date, url};
-        console.log(nota)
+        //console.log(nota)
         dispatch(activarNota(id, nota));
     }
     return (

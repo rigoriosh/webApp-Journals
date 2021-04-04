@@ -21,7 +21,7 @@ export const notesReducer = (state = initialState, action) => {
                 }
             }
         case types.notesAddNew:
-            console.log(state.notes);
+            //console.log(state.notes);
             
             return {
                 ...state,
